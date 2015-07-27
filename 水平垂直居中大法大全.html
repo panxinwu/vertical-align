@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*第一种*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            position: relative;
+            width: 198px;
+            height: 198px;
+            border: 1px solid #000000;
+        }
+        .center1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            width: 100px;
+            height: 100px;
+            background: #007edf;
+        }
+        /*第二种*/
+        .center2 {
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: red;
+        }
+        /*第三种*/
+        .center3 {
+            background: red;
+            display: table-cell;
+            vertical-align: middle;
+            width: 198px;
+            height: 198px;
+            text-align: center;
+            float: -left;  /*添加浮动后垂直居中失效*/
+        }
+        .center3 img {
+            width: 50%;
+        }
+        /*第四种*/
+        .inner-table {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        .center4 {
+            background: red;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .center4 img {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        /*第五种*/
+        .center5 {
+            position: fixed;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            height: 150px;
+            background: blue;
+        }
+        /*第六种*/
+        .center6 {
+            height: 198px;
+            line-height: 198px;
+            text-align: center;
+        }
+        /*第七种*/
+        .center7 {
+            height: 198px;
+            display: -webkit-box;
+            -webkit-box-pack:center;
+            -webkit-box-align:center;
+        }
+        .center7 img {
+            width: 20%;
+            display: block;
+        }
+        /*第八种*/
+        .center8 {
+            width: 80px;
+            position: absolute;
+            top: 50%; left: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            background: red;
+        }
+        /*第9种*/
+        .center9 {
+            position: relative;
+            text-align: center;
+            height: 198px;
+        }
+        .center9:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            background: #000;
+        }
+        .centered {
+            display: inline-block;
+            vertical-align: middle;
+            width: 198px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="center1"></div>
+</div>
+<div class="box">
+    <div class="center2"></div>
+</div>
+<div class="box">
+    <a class="center3"><img src="http://b.hiphotos.baidu.com/image/pic/item/cb8065380cd791234e622e6baf345982b2b7802b.jpg"></a>
+</div>
+<div class="box">
+    <div class="inner-table">
+        <div class="center4"><img src="http://b.hiphotos.baidu.com/image/pic/item/cb8065380cd791234e622e6baf345982b2b7802b.jpg"></div>
+    </div>
+</div>
+<div class="center5"></div>
+<div class="box">
+    <div class="center6">居中....</div>
+</div>
+<div class="box">
+    <div class="center7">居中....<img src="http://b.hiphotos.baidu.com/image/pic/item/cb8065380cd791234e622e6baf345982b2b7802b.jpg"></div>
+</div>
+<div class="box">
+    <div class="center8">居中</div>
+</div>
+<div class="box" style="margin: 0 auto">
+    <div class="center9"><div class="centered">居中</div></div>
+</div>
+</body>
+</html>
